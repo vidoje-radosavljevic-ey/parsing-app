@@ -2,11 +2,12 @@ import React from 'react';
 import classes from './ReportList.module.scss';
 import ReportItem from './ReportItem';
 
-function ReportList({ reportData, category }) {
+function ReportList({ reportData, category, isVisible }) {
   const date = new Date(reportData.timestamp);
 
   return (
-    category !== '' && (
+    category !== '' &&
+    isVisible && (
       <div className={classes['report-list']}>
         <p>Timestamp: {` ${date}`}</p>
         <div className={classes.headline}>

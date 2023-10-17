@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './ReportItem.module.scss';
 
 function ReportItem({ reportData, category }) {
-  console.log(reportData);
   return (
     <div className={classes.report}>
       {reportData &&

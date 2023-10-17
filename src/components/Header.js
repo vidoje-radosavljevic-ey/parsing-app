@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './Header.module.scss';
 import Button from './ui/Button';
 
 function Header({ onCategory }) {
+  const [isActive, setIsActive] = useState('');
+
   const handleIncomplete = (e) => {
+    setIsActive(e.target.textContent);
     onCategory(e.target.textContent.toLowerCase());
     window.scrollTo({ top: 0 });
   };
@@ -12,16 +15,36 @@ function Header({ onCategory }) {
     <div className={classes.header}>
       <ul className={classes['header-list']}>
         <li>
-          <Button onClick={handleIncomplete}>Incomplete</Button>
+          <Button
+            onClick={handleIncomplete}
+            className={isActive === 'Incomplete' ? classes.button : undefined}
+          >
+            Incomplete
+          </Button>
         </li>
         <li>
-          <Button onClick={handleIncomplete}>Passes</Button>
+          <Button
+            onClick={handleIncomplete}
+            className={isActive === 'Passes' ? classes.button : undefined}
+          >
+            Passes
+          </Button>
         </li>
         <li>
-          <Button onClick={handleIncomplete}>Violations</Button>
+          <Button
+            onClick={handleIncomplete}
+            className={isActive === 'Violations' ? classes.button : undefined}
+          >
+            Violations
+          </Button>
         </li>
         <li>
-          <Button onClick={handleIncomplete}>Inapplicable</Button>
+          <Button
+            onClick={handleIncomplete}
+            className={isActive === 'Inapplicable' ? classes.button : undefined}
+          >
+            Inapplicable
+          </Button>
         </li>
       </ul>
     </div>

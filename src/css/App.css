@@ -28,6 +28,8 @@ body {
     list-style: none; }
   .header li {
     margin-right: 4rem; }
+  .header .button {
+    background-color: blue; }
 
 .report-list {
   display: flex;

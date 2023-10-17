@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import Header from './components/Header';
 import './css/App.css';
 import ReportList from './components/ReportList';
@@ -8,6 +8,13 @@ function App() {
   const [reportData, setReportData] = useState([]);
   const [category, setCategory] = useState('');
   const [notice, setNotice] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (reportData.passes) {
+      setIsVisible(true);
+    }
+  }, [reportData]);
 
   const handleCategory = (category) => {
     setCategory(category);
@@ -38,6 +45,7 @@ function App() {
       <ReportList
         reportData={reportData}
         category={category}
+        isVisible={isVisible}
       />
     </Fragment>
   );
