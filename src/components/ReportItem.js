@@ -88,6 +88,21 @@ function ReportItem({ reportData, category }) {
                             </span>
                             <a href={item.helpUrl}>{item.helpUrl}</a>
                           </div>
+                          <div className={classes.target}>
+                            <span
+                              style={{
+                                display: 'block',
+                                paddingRight: 1 + 'rem',
+                                fontWeight: 'bold',
+                                marginLeft: 1 + 'rem',
+                              }}
+                            >
+                              tags:
+                            </span>
+                            {item.tags.map((tag) => (
+                              <p style={{ display: 'inline-block' }}>{tag}</p>
+                            ))}
+                          </div>
                         </div>
                       </li>
                     ))}
@@ -120,6 +135,21 @@ function ReportItem({ reportData, category }) {
                     suggestion:
                   </span>
                   <a href={item.helpUrl}>{item.helpUrl}</a>
+                </div>
+                <div className={classes.target}>
+                  <span
+                    style={{
+                      display: 'block',
+                      paddingRight: 1 + 'rem',
+                      fontWeight: 'bold',
+                      marginLeft: 1 + 'rem',
+                    }}
+                  >
+                    tags:
+                  </span>
+                  {item.tags.map((tag) => (
+                    <p style={{ display: 'inline-block' }}>{tag}</p>
+                  ))}
                 </div>
               </div>
             )}
