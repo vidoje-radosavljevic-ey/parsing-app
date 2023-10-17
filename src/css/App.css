@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+body {
+  position: relative;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6; }
+
+.button {
+  display: block;
+  background-color: blue;
+  margin: 0 auto;
+  margin-top: 3rem; }
+
+.header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 4rem;
+  background-color: #c4c4c4; }
+  .header .header-list > li {
+    display: inline-block;
+    list-style: none; }
+  .header li {
+    margin-right: 4rem; }
+
+.report-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5rem; }
+  .report-list .headline {
+    display: block;
+    background-color: #2e2e38;
+    color: #fff;
+    width: 100%;
+    padding: 2rem; }
+
+.btn {
+  background-color: #2e2e38;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  cursor: pointer; }
+
+.report {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 90%; }
+  .report p {
+    margin-top: 0.2rem; }
+  .report .help {
+    display: flex;
+    align-items: center;
+    background-color: #c4c4c4;
+    height: 3rem;
+    padding-left: 1rem;
+    margin-bottom: 0; }
+  .report .description ol {
+    background-color: #ececec;
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
+  .report .description .node p {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    margin-left: 1.5rem; }
+  .report .description .message {
+    background-color: #ececec; }
+    .report .description .message h4 {
+      margin-top: 0;
+      padding-top: 1rem; }
+  .report .description .target p {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem; }
+  .report .description .target a {
+    display: block;
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem; }
+  .report .inapplicable p {
+    margin-left: 1.5rem; }
+  .report .inapplicable ol {
+    background-color: #ececec;
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
+  .report .inapplicable .node p {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    margin-left: 1.5rem; }
+  .report .inapplicable .message {
+    background-color: #ececec; }
+    .report .inapplicable .message h4 {
+      margin-top: 0;
+      padding-top: 1rem; }
+  .report .inapplicable .target p {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem; }
+  .report .inapplicable .target a {
+    display: block;
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem; }

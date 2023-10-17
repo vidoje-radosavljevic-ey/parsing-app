@@ -1,0 +1,16 @@
+.report-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5rem;
+
+  .headline {
+    display: block;
+    background-color: #2e2e38;
+    color: #fff;
+    width: 100%;
+    padding: 2rem;
+  }
+}

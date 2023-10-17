@@ -1,0 +1,92 @@
+.report {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 90%;
+  p {
+    margin-top: 0.2rem;
+  }
+  .help {
+    display: flex;
+    align-items: center;
+    background-color: #c4c4c4;
+    height: 3rem;
+    padding-left: 1rem;
+    margin-bottom: 0;
+  }
+  .description {
+    ol {
+      background-color: #ececec;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .node {
+      p {
+        margin: 0;
+        margin-bottom: 0.5rem;
+        margin-left: 1.5rem;
+      }
+    }
+
+    .message {
+      h4 {
+        margin-top: 0;
+        padding-top: 1rem;
+      }
+      background-color: #ececec;
+    }
+    .target {
+      p {
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      a {
+        display: block;
+        margin-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .inapplicable {
+    p {
+      margin-left: 1.5rem;
+    }
+    ol {
+      background-color: #ececec;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .node {
+      p {
+        margin: 0;
+        margin-bottom: 0.5rem;
+        margin-left: 1.5rem;
+      }
+    }
+
+    .message {
+      h4 {
+        margin-top: 0;
+        padding-top: 1rem;
+      }
+      background-color: #ececec;
+    }
+    .target {
+      p {
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      a {
+        display: block;
+        margin-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+}
