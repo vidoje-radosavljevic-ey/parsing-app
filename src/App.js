@@ -9,12 +9,20 @@ function App() {
   const [category, setCategory] = useState('');
   const [notice, setNotice] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [buzz, setBuzz] = useState(false);
 
   useEffect(() => {
     if (reportData.passes) {
       setIsVisible(true);
     }
   }, [reportData]);
+
+  const handleBuzz = () => {
+    setTimeout(() => {
+      setBuzz((prev) => !prev);
+    }, 0);
+    setBuzz(false);
+  };
 
   const handleCategory = (category) => {
     setCategory(category);
@@ -35,8 +43,15 @@ function App() {
       <Header
         onCategory={handleCategory}
         reportData={reportData}
+        isVisible={isVisible}
+        onBuzz={handleBuzz}
       />
-      <FileInput onFileRead={handleFileRead} />
+      <FileInput
+        onFileRead={handleFileRead}
+        category={category}
+        reportData={reportData}
+        buzz={buzz}
+      />
       {notice && category === '' && (
         <p style={{ textAlign: 'center' }}>
           Your file is loaded, choose category

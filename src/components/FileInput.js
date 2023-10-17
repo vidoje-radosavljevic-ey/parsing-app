@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import Button from './ui/Button';
 import classes from './FileInput.module.scss';
 
-const FileInput = ({ onFileRead }) => {
+const FileInput = ({ onFileRead, buzz, reportData }) => {
   const fileInputRef = useRef(null);
 
   const handleFileSelect = () => {
@@ -32,7 +32,9 @@ const FileInput = ({ onFileRead }) => {
         id="fileInput"
       />
       <Button
-        className={classes.button}
+        className={
+          buzz && !reportData.passes ? classes.buzzing : classes.button
+        }
         onClick={handleFileSelect}
       >
         Choose JSON File

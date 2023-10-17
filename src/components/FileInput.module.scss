@@ -4,3 +4,31 @@
   margin: 0 auto;
   margin-top: 3rem;
 }
+
+.buzzing {
+  display: block;
+  background-color: blue;
+  margin: 0 auto;
+  margin-top: 3rem;
+  transition: background-color 0.3s;
+  animation-duration: 300ms;
+  animation-name: buzz;
+}
+
+@keyframes buzz {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

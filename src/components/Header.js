@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import classes from './Header.module.scss';
 import Button from './ui/Button';
 
-function Header({ onCategory }) {
+function Header({ onCategory, isVisible, onBuzz }) {
   const [isActive, setIsActive] = useState('');
 
-  const handleIncomplete = (e) => {
+  const handleCategory = (e) => {
+    onBuzz();
     setIsActive(e.target.textContent);
     onCategory(e.target.textContent.toLowerCase());
     window.scrollTo({ top: 0 });
@@ -16,32 +17,46 @@ function Header({ onCategory }) {
       <ul className={classes['header-list']}>
         <li>
           <Button
-            onClick={handleIncomplete}
-            className={isActive === 'Incomplete' ? classes.button : undefined}
+            onClick={handleCategory}
+            className={
+              isActive === 'Incomplete' && isVisible
+                ? classes.button
+                : undefined
+            }
           >
             Incomplete
           </Button>
         </li>
         <li>
           <Button
-            onClick={handleIncomplete}
-            className={isActive === 'Passes' ? classes.button : undefined}
+            onClick={handleCategory}
+            className={
+              isActive === 'Passes' && isVisible ? classes.button : undefined
+            }
           >
             Passes
           </Button>
         </li>
         <li>
           <Button
-            onClick={handleIncomplete}
-            className={isActive === 'Violations' ? classes.button : undefined}
+            onClick={handleCategory}
+            className={
+              isActive === 'Violations' && isVisible
+                ? classes.button
+                : undefined
+            }
           >
             Violations
           </Button>
         </li>
         <li>
           <Button
-            onClick={handleIncomplete}
-            className={isActive === 'Inapplicable' ? classes.button : undefined}
+            onClick={handleCategory}
+            className={
+              isActive === 'Inapplicable' && isVisible
+                ? classes.button
+                : undefined
+            }
           >
             Inapplicable
           </Button>
