@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './ReportItem.module.scss';
 
 function ReportItem({ reportData, category }) {
+  console.log(reportData);
   return (
     <div className={classes.report}>
       {reportData &&
@@ -87,7 +88,13 @@ function ReportItem({ reportData, category }) {
                                 >
                                   suggestion:
                                 </span>
-                                <a href={item.helpUrl}>{item.helpUrl}</a>
+                                <a
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  href={item.helpUrl}
+                                >
+                                  {item.helpUrl}
+                                </a>
                               </div>
                               <div className={classes.target}>
                                 <span
@@ -178,7 +185,13 @@ function ReportItem({ reportData, category }) {
                                 >
                                   suggestion:
                                 </span>
-                                <a href={item.helpUrl}>{item.helpUrl}</a>
+                                <a
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  href={item.helpUrl}
+                                >
+                                  {item.helpUrl}
+                                </a>
                               </div>
                               <div className={classes.target}>
                                 <span
@@ -235,7 +248,13 @@ function ReportItem({ reportData, category }) {
                     >
                       suggestion:
                     </span>
-                    <a href={item.helpUrl}>{item.helpUrl}</a>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href={item.helpUrl}
+                    >
+                      {item.helpUrl}
+                    </a>
                   </div>
                   <div className={classes.target}>
                     <span
