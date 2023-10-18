@@ -45,6 +45,7 @@ function App() {
         reportData={reportData}
         isVisible={isVisible}
         onBuzz={handleBuzz}
+        category={category}
       />
       <FileInput
         onFileRead={handleFileRead}

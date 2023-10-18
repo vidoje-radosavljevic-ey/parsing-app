@@ -1,14 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import classes from './Header.module.scss';
 import Button from './ui/Button';
+import CountContext from '../store/count-context';
 
-function Header({ onCategory, isVisible, onBuzz }) {
+function Header({ onCategory, isVisible, onBuzz, reportData }) {
   const [isActive, setIsActive] = useState('');
+  const countCtx = useContext(CountContext);
+
+  if (isVisible) {
+    const keys = Object.keys(reportData);
+    for (const key of keys) {
+      const value = reportData[key];
+      if (Array.isArray(value)) {
+        if (key === 'incomplete') {
+          const nodeCount = value.map((item) => item.nodes.length);
+          const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
+          countCtx.incomplete = totalCount;
+        } else if (key === 'passes') {
+          const nodeCount = value.map((item) => item.nodes.length);
+          const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
+          countCtx.passes = totalCount;
+        } else if (key === 'violations') {
+          const nodeCount = value.map((item) => item.nodes.length);
+          const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
+          countCtx.violations = totalCount;
+        } else if (key === 'inapplicable') {
+          const nodeCount = value.length;
+          // const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
+          countCtx.inapplicable = nodeCount;
+        }
+      }
+    }
+  }
 
   const handleCategory = (e) => {
     onBuzz();
-    setIsActive(e.target.textContent);
-    onCategory(e.target.textContent.toLowerCase());
+    if (reportData.passes) {
+      setIsActive(e.target.textContent);
+      onCategory(e.target.textContent.toLowerCase());
+    }
     window.scrollTo({ top: 0 });
   };
 
@@ -26,6 +56,7 @@ function Header({ onCategory, isVisible, onBuzz }) {
           >
             Incomplete
           </Button>
+          {reportData.incomplete && <p>{countCtx.incomplete}</p>}
         </li>
         <li>
           <Button
@@ -36,6 +67,7 @@ function Header({ onCategory, isVisible, onBuzz }) {
           >
             Passes
           </Button>
+          {reportData.passes && <p>{countCtx.passes}</p>}
         </li>
         <li>
           <Button
@@ -48,6 +80,7 @@ function Header({ onCategory, isVisible, onBuzz }) {
           >
             Violations
           </Button>
+          {reportData.violations && <p>{countCtx.violations}</p>}
         </li>
         <li>
           <Button
@@ -60,6 +93,7 @@ function Header({ onCategory, isVisible, onBuzz }) {
           >
             Inapplicable
           </Button>
+          {reportData.inapplicable && <p>{countCtx.inapplicable}</p>}
         </li>
       </ul>
     </div>
