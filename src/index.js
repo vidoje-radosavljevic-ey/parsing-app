@@ -1,9 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { CountContextProvider } from './store/count-context';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { CountContextProvider } from "./store/count-context";
+import "./assets/fonts/ttnorms-pro.scss";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <CountContextProvider>
