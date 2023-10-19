@@ -7,28 +7,11 @@
   margin-top: 5rem;
 
   .headline {
-    display: block;
-    position: relative;
-    background-color: #2e2e38;
     color: #fff;
-    width: 100%;
-    padding: 2rem;
 
     h2 {
-      display: inline-block;
-      margin: 0;
-    }
-
-    p {
-      display: inline-block;
-      position: absolute;
-      min-width: 2rem;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      top: -0.5rem;
-      left: -1rem;
-      background-color: red;
+      display: inline;
+      margin-right: 16px;
     }
   }
 }
