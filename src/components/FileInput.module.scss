@@ -1,15 +1,10 @@
 .button {
-  display: block;
-  background-color: blue;
-  margin: 0 auto;
-  margin-top: 3rem;
+  margin: 3rem auto 0;
 }
 
 .buzzing {
-  display: block;
-  background-color: blue;
-  margin: 0 auto;
-  margin-top: 3rem;
+  background-color: #0e838a;
+  margin: 3rem auto 0;
   transition: background-color 0.3s;
   animation-duration: 300ms;
   animation-name: buzz;
