@@ -1,5 +1,5 @@
-import React from 'react';
-import classes from './ReportItem.module.scss';
+import React from "react";
+import classes from "./ReportItem.module.scss";
 
 function ReportItem({ reportData, category }) {
   return (
@@ -8,31 +8,33 @@ function ReportItem({ reportData, category }) {
         reportData.map((item, index) => (
           <div key={Math.random()}>
             <div className={classes.help}>
-              {`${index + 1})`}
-              <span style={{ paddingRight: 0.5 + 'rem' }}></span>{' '}
-              <h3>{item.help}</h3>
+              <h4 className={classes.h4Title}>
+                {`${index + 1}.`} {item.help}
+              </h4>
             </div>
             {/* <p>{item.description}</p> */}
-            {category !== 'inapplicable' ? (
+            {category !== "inapplicable" ? (
               <div className={classes.description}>
                 {item.nodes.map((node, nodeIndex) => (
                   <ol
+                    className={classes.ol}
                     start={nodeIndex + 1}
                     key={Math.random()}
                   >
                     {node.any.length > 0
                       ? node.any.map((el) => (
-                          <li key={Math.random()}>
+                          <li className={classes.li} key={Math.random()}>
                             <div className={classes.node}>
                               <div className={classes.message}>
-                                <h4>{el.message}</h4>
+                                <h4>
+                                  {`${nodeIndex + 1}.`} {el.message}
+                                </h4>
                               </div>
                               <div className={classes.html}>
                                 <span
                                   style={{
-                                    display: 'block',
-                                    fontWeight: 'bold',
-                                    marginLeft: 1 + 'rem',
+                                    display: "block",
+                                    fontWeight: "bold",
                                   }}
                                 >
                                   html:
@@ -42,9 +44,8 @@ function ReportItem({ reportData, category }) {
                               <div className={classes.html}>
                                 <span
                                   style={{
-                                    display: 'block',
-                                    fontWeight: 'bold',
-                                    marginLeft: 1 + 'rem',
+                                    display: "block",
+                                    fontWeight: "bold",
                                   }}
                                 >
                                   id:
@@ -55,9 +56,8 @@ function ReportItem({ reportData, category }) {
                                 <div className={classes.impact}>
                                   <span
                                     style={{
-                                      paddingRight: 1 + 'rem',
-                                      fontWeight: 'bold',
-                                      marginLeft: 1 + 'rem',
+                                      paddingRight: 1 + "rem",
+                                      fontWeight: "bold",
                                     }}
                                   >
                                     impact:
@@ -68,9 +68,8 @@ function ReportItem({ reportData, category }) {
                               <div className={classes.target}>
                                 <span
                                   style={{
-                                    paddingRight: 1 + 'rem',
-                                    fontWeight: 'bold',
-                                    marginLeft: 1 + 'rem',
+                                    paddingRight: 1 + "rem",
+                                    fontWeight: "bold",
                                   }}
                                 >
                                   target:
@@ -80,28 +79,29 @@ function ReportItem({ reportData, category }) {
                               <div className={classes.target}>
                                 <span
                                   style={{
-                                    paddingRight: 1 + 'rem',
-                                    fontWeight: 'bold',
-                                    marginLeft: 1 + 'rem',
+                                    paddingRight: 1 + "rem",
+                                    fontWeight: "bold",
                                   }}
                                 >
                                   suggestion:
                                 </span>
-                                <a
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  href={item.helpUrl}
-                                >
-                                  {item.helpUrl}
-                                </a>
+                                <div className={classes.wrapper}>
+                                  <a
+                                    className={classes.a}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    href={item.helpUrl}
+                                  >
+                                    {item.helpUrl}
+                                  </a>
+                                </div>
                               </div>
                               <div className={classes.target}>
                                 <span
                                   style={{
-                                    display: 'block',
-                                    paddingRight: 1 + 'rem',
-                                    fontWeight: 'bold',
-                                    marginLeft: 1 + 'rem',
+                                    display: "block",
+                                    paddingRight: 1 + "rem",
+                                    fontWeight: "bold",
                                   }}
                                 >
                                   tags:
@@ -109,7 +109,7 @@ function ReportItem({ reportData, category }) {
                                 {item.tags.map((tag) => (
                                   <p
                                     key={Math.random()}
-                                    style={{ display: 'inline-block' }}
+                                    style={{ display: "inline-block" }}
                                   >
                                     {tag}
                                   </p>
@@ -122,14 +122,15 @@ function ReportItem({ reportData, category }) {
                           <li key={Math.random()}>
                             <div className={classes.node}>
                               <div className={classes.message}>
-                                <h4>{el.message}</h4>
+                                <h4>
+                                  {`${nodeIndex + 1}.`} {el.message}
+                                </h4>
                               </div>
                               <div className={classes.html}>
                                 <span
                                   style={{
-                                    display: 'block',
-                                    fontWeight: 'bold',
-                                    marginLeft: 1 + 'rem',
+                                    display: "block",
+                                    fontWeight: "bold",
                                   }}
                                 >
                                   html:
@@ -139,9 +140,8 @@ function ReportItem({ reportData, category }) {
                               <div className={classes.html}>
                                 <span
                                   style={{
-                                    display: 'block',
-                                    fontWeight: 'bold',
-                                    marginLeft: 1 + 'rem',
+                                    display: "block",
+                                    fontWeight: "bold",
                                   }}
                                 >
                                   id:
@@ -152,9 +152,8 @@ function ReportItem({ reportData, category }) {
                                 <div className={classes.impact}>
                                   <span
                                     style={{
-                                      paddingRight: 1 + 'rem',
-                                      fontWeight: 'bold',
-                                      marginLeft: 1 + 'rem',
+                                      paddingRight: 1 + "rem",
+                                      fontWeight: "bold",
                                     }}
                                   >
                                     impact:
@@ -165,9 +164,8 @@ function ReportItem({ reportData, category }) {
                               <div className={classes.target}>
                                 <span
                                   style={{
-                                    paddingRight: 1 + 'rem',
-                                    fontWeight: 'bold',
-                                    marginLeft: 1 + 'rem',
+                                    paddingRight: 1 + "rem",
+                                    fontWeight: "bold",
                                   }}
                                 >
                                   target:
@@ -177,28 +175,29 @@ function ReportItem({ reportData, category }) {
                               <div className={classes.target}>
                                 <span
                                   style={{
-                                    paddingRight: 1 + 'rem',
-                                    fontWeight: 'bold',
-                                    marginLeft: 1 + 'rem',
+                                    paddingRight: 1 + "rem",
+                                    fontWeight: "bold",
                                   }}
                                 >
                                   suggestion:
                                 </span>
-                                <a
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  href={item.helpUrl}
-                                >
-                                  {item.helpUrl}
-                                </a>
+                                <div className={classes.wrapper}>
+                                  <a
+                                    className={classes.a}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    href={item.helpUrl}
+                                  >
+                                    {item.helpUrl}
+                                  </a>
+                                </div>
                               </div>
                               <div className={classes.target}>
                                 <span
                                   style={{
-                                    display: 'block',
-                                    paddingRight: 1 + 'rem',
-                                    fontWeight: 'bold',
-                                    marginLeft: 1 + 'rem',
+                                    display: "block",
+                                    paddingRight: 1 + "rem",
+                                    fontWeight: "bold",
                                   }}
                                 >
                                   tags:
@@ -206,7 +205,7 @@ function ReportItem({ reportData, category }) {
                                 {item.tags.map((tag) => (
                                   <p
                                     key={Math.random()}
-                                    style={{ display: 'inline-block' }}
+                                    style={{ display: "inline-block" }}
                                   >
                                     {tag}
                                   </p>
@@ -220,17 +219,13 @@ function ReportItem({ reportData, category }) {
               </div>
             ) : (
               <div className={classes.inapplicable}>
-                <ol
-                  start={1}
-                  key={Math.random()}
-                >
-                  <span style={{ paddingRight: 0.5 + 'rem' }}></span>{' '}
+                <ol className={classes.ol} start={1} key={Math.random()}>
+                  <span style={{ paddingRight: 0.5 + "rem" }}></span>{" "}
                   <div className={classes.html}>
                     <span
                       style={{
-                        display: 'block',
-                        fontWeight: 'bold',
-                        marginLeft: 1 + 'rem',
+                        display: "block",
+                        fontWeight: "bold",
                       }}
                     >
                       id:
@@ -240,28 +235,29 @@ function ReportItem({ reportData, category }) {
                   <div className={classes.target}>
                     <span
                       style={{
-                        paddingRight: 1 + 'rem',
-                        fontWeight: 'bold',
-                        marginLeft: 1 + 'rem',
+                        paddingRight: 1 + "rem",
+                        fontWeight: "bold",
                       }}
                     >
                       suggestion:
                     </span>
-                    <a
-                      target="_blank"
-                      rel="noreferrer"
-                      href={item.helpUrl}
-                    >
-                      {item.helpUrl}
-                    </a>
+                    <div className={classes.wrapper}>
+                      <a
+                        className={classes.a}
+                        target="_blank"
+                        rel="noreferrer"
+                        href={item.helpUrl}
+                      >
+                        {item.helpUrl}
+                      </a>
+                    </div>
                   </div>
                   <div className={classes.target}>
                     <span
                       style={{
-                        display: 'block',
-                        paddingRight: 1 + 'rem',
-                        fontWeight: 'bold',
-                        marginLeft: 1 + 'rem',
+                        display: "block",
+                        paddingRight: 1 + "rem",
+                        fontWeight: "bold",
                       }}
                     >
                       tags:
@@ -269,7 +265,7 @@ function ReportItem({ reportData, category }) {
                     {item.tags.map((tag) => (
                       <p
                         key={Math.random()}
-                        style={{ display: 'inline-block' }}
+                        style={{ display: "inline-block" }}
                       >
                         {tag}
                       </p>

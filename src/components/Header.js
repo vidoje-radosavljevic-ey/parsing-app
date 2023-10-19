@@ -1,10 +1,11 @@
-import React, { useState, useContext } from 'react';
-import classes from './Header.module.scss';
-import Button from './ui/Button';
-import CountContext from '../store/count-context';
+import React, { useState, useContext } from "react";
+import classes from "./Header.module.scss";
+import Button from "./ui/Button";
+import CountContext from "../store/count-context";
+import logo from "../assets/logo/hd-logo-white.svg";
 
 function Header({ onCategory, isVisible, onBuzz, reportData }) {
-  const [isActive, setIsActive] = useState('');
+  const [isActive, setIsActive] = useState("");
   const countCtx = useContext(CountContext);
 
   if (isVisible) {
@@ -12,19 +13,19 @@ function Header({ onCategory, isVisible, onBuzz, reportData }) {
     for (const key of keys) {
       const value = reportData[key];
       if (Array.isArray(value)) {
-        if (key === 'incomplete') {
+        if (key === "incomplete") {
           const nodeCount = value.map((item) => item.nodes.length);
           const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
           countCtx.incomplete = totalCount;
-        } else if (key === 'passes') {
+        } else if (key === "passes") {
           const nodeCount = value.map((item) => item.nodes.length);
           const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
           countCtx.passes = totalCount;
-        } else if (key === 'violations') {
+        } else if (key === "violations") {
           const nodeCount = value.map((item) => item.nodes.length);
           const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
           countCtx.violations = totalCount;
-        } else if (key === 'inapplicable') {
+        } else if (key === "inapplicable") {
           const nodeCount = value.length;
           // const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
           countCtx.inapplicable = nodeCount;
@@ -44,58 +45,77 @@ function Header({ onCategory, isVisible, onBuzz, reportData }) {
 
   return (
     <div className={classes.header}>
-      <ul className={classes['header-list']}>
-        <li>
+      <div>
+        <img className={classes.logo} src={logo} alt="logo" />
+      </div>
+      <div className={classes.nav}>
+        <div className={classes.buttonWrapp}>
           <Button
             onClick={handleCategory}
             className={
-              isActive === 'Incomplete' && isVisible
+              isActive === "Incomplete" && isVisible
                 ? classes.button
                 : undefined
             }
           >
             Incomplete
           </Button>
-          {reportData.incomplete && <p>{countCtx.incomplete}</p>}
-        </li>
-        <li>
+          {reportData.incomplete && (
+            <div className={classes.itemNoWrapp}>
+              <p className={classes.itemsNo}>{countCtx.incomplete}</p>
+            </div>
+          )}
+        </div>
+        <div className={classes.buttonWrapp}>
           <Button
             onClick={handleCategory}
             className={
-              isActive === 'Passes' && isVisible ? classes.button : undefined
+              isActive === "Passes" && isVisible ? classes.button : undefined
             }
           >
             Passes
           </Button>
-          {reportData.passes && <p>{countCtx.passes}</p>}
-        </li>
-        <li>
+          {reportData.passes && (
+            <div className={classes.itemNoWrapp}>
+              <p className={classes.itemsNo}>{countCtx.passes}</p>
+            </div>
+          )}
+        </div>
+        <div className={classes.buttonWrapp}>
           <Button
             onClick={handleCategory}
             className={
-              isActive === 'Violations' && isVisible
+              isActive === "Violations" && isVisible
                 ? classes.button
                 : undefined
             }
           >
             Violations
           </Button>
-          {reportData.violations && <p>{countCtx.violations}</p>}
-        </li>
-        <li>
+          {reportData.violations && (
+            <div className={classes.itemNoWrapp}>
+              <p className={classes.itemsNo}>{countCtx.violations}</p>
+            </div>
+          )}
+        </div>
+        <div className={classes.buttonWrapp}>
           <Button
             onClick={handleCategory}
             className={
-              isActive === 'Inapplicable' && isVisible
+              isActive === "Inapplicable" && isVisible
                 ? classes.button
                 : undefined
             }
           >
             Inapplicable
           </Button>
-          {reportData.inapplicable && <p>{countCtx.inapplicable}</p>}
-        </li>
-      </ul>
+          {reportData.inapplicable && (
+            <div className={classes.itemNoWrapp}>
+              <p className={classes.itemsNo}>{countCtx.inapplicable}</p>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
