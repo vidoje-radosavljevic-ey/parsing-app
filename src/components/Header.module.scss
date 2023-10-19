@@ -1,35 +1,94 @@
+.logo {
+  padding: 12px 0 13px 26px;
+}
+
 .header {
-  display: flex;
+  padding: 20px 0;
   position: sticky;
   top: 0;
-  justify-content: center;
-  align-content: center;
-  width: 100%;
-  height: 4rem;
-  background-color: #c4c4c4;
 
-  .header-list > li {
-    display: inline-block;
-    list-style: none;
-  }
-  li {
+  width: 100%;
+  background-color: #011831;
+  z-index: 1000;
+
+  .nav {
     position: relative;
-    margin-right: 4rem;
-    p {
-      display: inline-block;
-      position: absolute;
-      min-width: 1.6rem;
-      top: -1.4rem;
-      left: 9rem;
-      color: #fff;
-      background-color: red;
-      font-size: 0.8rem;
-      padding: 0.1rem;
-      text-align: center;
-    }
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .buttonWrapp {
+    position: relative;
+  }
+
+  .itemNoWrapp {
+    background-color: #0085ff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -16px;
+    right: -16px;
+  }
+
+  .itemsNo {
+    font-size: 13px;
   }
 
   .button {
-    background-color: blue;
+    font-family: "TTNormsPro", sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    box-shadow: none;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.35;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      padding: 15px 19px;
+    }
+    &:active,
+    &:focus {
+      padding: 15px 18px;
+    }
+
+    &:not(:disabled):active:focus,
+    &:not(:disabled):focus-visible {
+      box-shadow: 0 0 0 0.2rem rgb(38, 143, 255, 50%);
+      outline-width: 0;
+    }
+
+    /* PRIMARY */
+
+    color: #fff;
+    background-color: #0e838a;
+    border: 1px solid #0e838a;
+
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+      background-color: transparent;
+      border: 2px solid #0e838a;
+    }
+    &:active,
+    &:focus {
+      cursor: pointer;
+      color: #fff;
+      background-color: rgba(2, 87, 187, 0.1);
+      border: 3px solid #0e838a;
+    }
   }
 }
