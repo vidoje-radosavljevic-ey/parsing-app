@@ -1,135 +1,99 @@
-@import "../assets/fonts/ttnorms-pro.scss";
 body {
   position: relative;
   min-height: 100vh;
   font-family: "TTNormsPro", sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #011831;
-  color: #fff;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-h1,
-.h1 {
-  font-size: 32px;
-}
-
-h2,
-.h2 {
-  font-size: 26px;
-}
-
-h3,
-.h3 {
-  font-size: 25px;
-}
-
-h4,
-.h4 {
-  font-size: 18px;
-}
-
-h5,
-.h5 {
-  font-size: 18px;
-}
-
-p {
-  font-size: 16px;
-}
-
-@media (min-width: 992px) {
-  h4,
-  .h4,
-  h3,
-  .h3 {
-    font-size: 26px;
-  }
-
-  h2,
-  .h2 {
-    font-size: 34px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
-  h1,
-  .h1 {
-    font-size: 42px;
-    margin-bottom: 30px;
-  }
-}
+  padding: 0 20px;
+  background-color: #011831; }
 
 .button {
-  display: block;
-  font-family: "TTNormsPro", sans-serif;
-  background-color: blue;
-  margin: 0 auto;
-  margin-top: 3rem;
-}
+  margin: 3rem auto 0; }
 
 .buzzing {
-  display: block;
-  background-color: blue;
-  margin: 0 auto;
-  margin-top: 3rem;
+  background-color: #0e838a;
+  margin: 3rem auto 0;
   transition: background-color 0.3s;
   animation-duration: 300ms;
-  animation-name: buzz;
-}
+  animation-name: buzz; }
 
 @keyframes buzz {
   0% {
-    transform: translateX(0);
-  }
+    transform: translateX(0); }
   25% {
-    transform: translateX(-5px);
-  }
+    transform: translateX(-5px); }
   50% {
-    transform: translateX(5px);
-  }
+    transform: translateX(5px); }
   75% {
-    transform: translateX(-5px);
-  }
+    transform: translateX(-5px); }
   100% {
-    transform: translateX(0);
-  }
-}
+    transform: translateX(0); } }
+.logo {
+  padding: 12px 0 13px 26px; }
+
 .header {
-  display: flex;
+  padding: 20px 0;
   position: sticky;
   top: 0;
-  justify-content: center;
-  align-content: center;
   width: 100%;
-  height: 4rem;
-  background-color: #c4c4c4;
-}
-.header .header-list > li {
-  display: inline-block;
-  list-style: none;
-}
-.header li {
-  margin-right: 4rem;
-}
-.header .button {
-  background-color: blue;
-}
+  background-color: #011831;
+  z-index: 1000; }
+  .header .nav {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-content: center; }
+  .header .buttonWrapp {
+    position: relative; }
+  .header .itemNoWrapp {
+    background-color: #0085ff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -16px;
+    right: -16px; }
+  .header .itemsNo {
+    font-size: 13px; }
+  .header .button {
+    font-family: 'TTNormsPro', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    box-shadow: none;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.35;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* PRIMARY */
+    color: #fff;
+    background-color: #0e838a;
+    border: 1px solid #0e838a; }
+    .header .button:hover {
+      padding: 15px 19px; }
+    .header .button:active, .header .button:focus {
+      padding: 15px 18px; }
+    .header .button:not(:disabled):active:focus, .header .button:not(:disabled):focus-visible {
+      box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+      outline-width: 0; }
+    .header .button:hover {
+      cursor: pointer;
+      color: #fff;
+      background-color: transparent;
+      border: 2px solid #0e838a; }
+    .header .button:active, .header .button:focus {
+      cursor: pointer;
+      color: #fff;
+      background-color: rgba(2, 87, 187, 0.1);
+      border: 3px solid #0e838a; }
 
 .report-list {
   display: flex;
@@ -137,96 +101,191 @@ p {
   justify-content: center;
   width: 80%;
   margin: 0 auto;
-  margin-top: 5rem;
-}
-.report-list .headline {
-  display: block;
-  background-color: #2e2e38;
-  color: #fff;
-  padding: 2rem;
-}
+  margin-top: 5rem; }
+  .report-list .headline {
+    color: #fff; }
+    .report-list .headline h2 {
+      display: inline;
+      margin-right: 16px; }
 
 .btn {
-  background-color: #2e2e38;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 2px;
+  font-family: 'TTNormsPro', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  box-shadow: none;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.35;
+  padding: 15px 20px;
   cursor: pointer;
-}
+  border-radius: 6px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  /* SECONDARY */
+  color: #fff;
+  background-color: rgba(14, 131, 138, 0.2);
+  border: 1px solid #00a39e; }
+  .btn:hover {
+    padding: 15px 19px; }
+  .btn:active, .btn:focus {
+    padding: 15px 18px; }
+  .btn:not(:disabled):active:focus, .btn:not(:disabled):focus-visible {
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    outline-width: 0; }
+  .btn:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #60759e; }
+  .btn:active, .btn:focus {
+    cursor: pointer;
+    color: #fff;
+    background-color: #01355a;
+    border: 3px solid #60759e; }
 
 .report {
-  display: flex;
-  flex-direction: column;
   margin: 0 auto;
   margin-top: 2rem;
-  width: 90%;
-}
-.report p {
-  margin-top: 0.2rem;
-}
-.report .help {
-  display: flex;
-  align-items: center;
-  background-color: #c4c4c4;
-  height: 3rem;
-  padding-left: 1rem;
-  margin-bottom: 0;
-}
-.report .description ol {
-  background-color: #ececec;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-.report .description .node p {
-  margin: 0;
-  margin-bottom: 0.5rem;
-  margin-left: 1.5rem;
-}
-.report .description .message {
-  background-color: #ececec;
-}
-.report .description .message h4 {
-  margin-top: 0;
-  padding-top: 1rem;
-}
-.report .description .target p {
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-.report .description .target a {
-  display: block;
-  margin-left: 1.5rem;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-.report .inapplicable p {
-  margin-left: 1.5rem;
-}
-.report .inapplicable ol {
-  background-color: #ececec;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-.report .inapplicable .node p {
-  margin: 0;
-  margin-bottom: 0.5rem;
-  margin-left: 1.5rem;
-}
-.report .inapplicable .message {
-  background-color: #ececec;
-}
-.report .inapplicable .message h4 {
-  margin-top: 0;
-  padding-top: 1rem;
-}
-.report .inapplicable .target p {
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-.report .inapplicable .target a {
-  display: block;
-  margin-left: 1.5rem;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-}
+  color: #011831; }
+  .report .h4Title {
+    margin: 0; }
+  .report p {
+    margin-top: 0.2rem; }
+  .report .help {
+    color: #ffffff; }
+  .report .description {
+    counter-reset: my-counter; }
+    .report .description .ol {
+      background-color: #ececec;
+      margin: 1.5rem 0;
+      padding: 20px 20px 20px 40px;
+      border-radius: 6px;
+      list-style-type: none; }
+      .report .description .ol:last-child {
+        margin: 1.5rem 0 3.5rem; }
+    .report .description .li {
+      position: relative; }
+    .report .description .node p {
+      margin: 0;
+      margin-bottom: 0.5rem;
+      margin-left: 1.5rem; }
+    .report .description .message {
+      background-color: #ececec; }
+      .report .description .message h4 {
+        margin-top: 0;
+        padding-top: 1rem; }
+    .report .description .target p {
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem; }
+    .report .description .target .wrapper {
+      width: max-content;
+      cursor: pointer;
+      margin-bottom: 0.5rem; }
+    .report .description .target .wrapper:focus-visible {
+      outline: none; }
+    .report .description .target .a {
+      color: #011831;
+      font-weight: 500;
+      text-decoration: none;
+      margin: 0 0 7px 0;
+      padding: 2px 3px;
+      border-bottom: 2px solid #0084ff;
+      background-size: 204% 150%;
+      background-image: linear-gradient(to left, #0069cc 50%, rgba(255, 255, 255, 0) 50%);
+      transition: background-position 0.5s cubic-bezier(1, 0, 0, 1), color ease 0.5s, border ease 0.5s; }
+    .report .description .target .wrapper:first-child {
+      margin-right: 5px; }
+    .report .description .target .wrapper:last-child {
+      margin-left: 1.5rem; }
+    .wrapper:hover > .report .description .target,
+    .report .description .target .a:hover {
+      text-decoration: none;
+      background-position: -97% 0;
+      color: #011831;
+      cursor: pointer;
+      border-color: #0069cc; }
+    .wrapper:active > .report .description .target,
+    .report .description .target .a:active {
+      background-image: linear-gradient(to left, #e6eef8 50%, rgba(255, 255, 255, 0) 50%);
+      border-bottom: 2px solid #e6eef8; }
+    .wrapper:focus > .report .description .target,
+    .report .description .target .a:focus {
+      outline: none;
+      background-color: #e6eef8;
+      border-bottom: 2px solid transparent; }
+  .report .inapplicable p {
+    margin-left: 1.5rem; }
+  .report .inapplicable .ol {
+    background-color: #ffffff;
+    margin: 1.5rem 0;
+    padding: 20px;
+    border-radius: 6px;
+    list-style: none;
+    counter-reset: new-counter; }
+    .report .inapplicable .ol:last-child {
+      margin: 1.5rem 0 3.5rem; }
+  .report .inapplicable li {
+    counter-increment: new-counter; }
+  .report .inapplicable li::before {
+    content: counter(new-counter); }
+  .report .inapplicable .node p {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    margin-left: 1.5rem; }
+  .report .inapplicable .message {
+    background-color: #ececec; }
+    .report .inapplicable .message h4 {
+      margin-top: 0;
+      padding-top: 1rem; }
+  .report .inapplicable .target p {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem; }
+  .report .inapplicable .target .wrapper {
+    width: max-content;
+    cursor: pointer;
+    margin-bottom: 0.5rem; }
+  .report .inapplicable .target .wrapper:focus-visible {
+    outline: none; }
+  .report .inapplicable .target .a {
+    color: #011831;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0 0 7px 0;
+    padding: 2px 3px;
+    border-bottom: 2px solid #0084ff;
+    background-size: 204% 150%;
+    background-image: linear-gradient(to left, #0069cc 50%, rgba(255, 255, 255, 0) 50%);
+    transition: background-position 0.5s cubic-bezier(1, 0, 0, 1), color ease 0.5s, border ease 0.5s; }
+  .report .inapplicable .target .wrapper:first-child {
+    margin-right: 5px; }
+  .report .inapplicable .target .wrapper:last-child {
+    margin-left: 1.5rem; }
+  .wrapper:hover > .report .inapplicable .target,
+  .report .inapplicable .target .a:hover {
+    text-decoration: none;
+    background-position: -97% 0;
+    color: #011831;
+    cursor: pointer;
+    border-color: #0069cc; }
+  .wrapper:active > .report .inapplicable .target,
+  .report .inapplicable .target .a:active {
+    background-image: linear-gradient(to left, #e6eef8 50%, rgba(255, 255, 255, 0) 50%);
+    border-bottom: 2px solid #e6eef8; }
+  .wrapper:focus > .report .inapplicable .target,
+  .report .inapplicable .target .a:focus {
+    outline: none;
+    background-color: #e6eef8;
+    border-bottom: 2px solid transparent; }
+
+@font-face {
+  font-family: TTNormsProBold;
+  src: url("TTNormsPro-Bold.eot");
+  src: url("TTNormsPro-Bold.eot?#iefix") format("embedded-opentype"), url("TTNormsPro-Bold.woff2") format("woff2"), url("TTNormsPro-Bold.woff") format("woff"), url("TTNormsPro-Bold.ttf") format("truetype"), url("TTNormsPro-Bold.svg#TTNormsPro-Bold") format("svg");
+  font-weight: bold; }
+@font-face {
+  font-family: TTNormsPro;
+  src: url("TTNormsPro-Regular.eot");
+  src: url("TTNormsPro-Regular.eot?#iefix") format("embedded-opentype"), url("TTNormsPro-Regular.woff2") format("woff2"), url("TTNormsPro-Regular.woff") format("woff"), url("TTNormsPro-Regular.ttf") format("truetype"), url("TTNormsPro-Regular.svg#TTNormsPro-Regular") format("svg");
+  font-weight: normal; }

@@ -1,5 +1,5 @@
 .btn {
-  font-family: "TTNormsPro", sans-serif;
+  font-family: 'TTNormsPro', sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -25,7 +25,7 @@
 
   &:not(:disabled):active:focus,
   &:not(:disabled):focus-visible {
-    box-shadow: 0 0 0 0.2rem rgb(38, 143, 255, 50%);
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
     outline-width: 0;
   }
 
