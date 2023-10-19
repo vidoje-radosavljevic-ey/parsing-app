@@ -1,9 +1,51 @@
 .btn {
-  width: 10rem;
-  background-color: #2e2e38;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 2px;
+  font-family: "TTNormsPro", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  box-shadow: none;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.35;
+  padding: 15px 20px;
   cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    padding: 15px 19px;
+  }
+  &:active,
+  &:focus {
+    padding: 15px 18px;
+  }
+
+  &:not(:disabled):active:focus,
+  &:not(:disabled):focus-visible {
+    box-shadow: 0 0 0 0.2rem rgb(38, 143, 255, 50%);
+    outline-width: 0;
+  }
+
+  /* SECONDARY */
+
+  color: #fff;
+  background-color: rgba(14, 131, 138, 0.2);
+  border: 1px solid #00a39e;
+
+  &:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #60759e;
+  }
+  &:active,
+  &:focus {
+    cursor: pointer;
+    color: #fff;
+    background-color: #01355a;
+    border: 3px solid #60759e;
+  }
 }
