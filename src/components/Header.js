@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
-import classes from "./Header.module.scss";
-import Button from "./ui/Button";
-import CountContext from "../store/count-context";
-import logo from "../assets/logo/hd-logo-white.svg";
+import React, { useState, useContext } from 'react';
+import classes from './Header.module.scss';
+import Button from './ui/Button';
+import CountContext from '../store/count-context';
+import logo from '../assets/logo/hd-logo-white.svg';
 
 function Header({ onCategory, isVisible, onBuzz, reportData }) {
-  const [isActive, setIsActive] = useState("");
+  const [isActive, setIsActive] = useState('');
   const countCtx = useContext(CountContext);
 
   if (isVisible) {
@@ -13,21 +13,20 @@ function Header({ onCategory, isVisible, onBuzz, reportData }) {
     for (const key of keys) {
       const value = reportData[key];
       if (Array.isArray(value)) {
-        if (key === "incomplete") {
+        if (key === 'incomplete') {
           const nodeCount = value.map((item) => item.nodes.length);
           const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
           countCtx.incomplete = totalCount;
-        } else if (key === "passes") {
+        } else if (key === 'passes') {
           const nodeCount = value.map((item) => item.nodes.length);
           const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
           countCtx.passes = totalCount;
-        } else if (key === "violations") {
+        } else if (key === 'violations') {
           const nodeCount = value.map((item) => item.nodes.length);
           const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
           countCtx.violations = totalCount;
-        } else if (key === "inapplicable") {
+        } else if (key === 'inapplicable') {
           const nodeCount = value.length;
-          // const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
           countCtx.inapplicable = nodeCount;
         }
       }
@@ -46,14 +45,18 @@ function Header({ onCategory, isVisible, onBuzz, reportData }) {
   return (
     <div className={classes.header}>
       <div>
-        <img className={classes.logo} src={logo} alt="logo" />
+        <img
+          className={classes.logo}
+          src={logo}
+          alt="logo"
+        />
       </div>
       <div className={classes.nav}>
         <div className={classes.buttonWrapp}>
           <Button
             onClick={handleCategory}
             className={
-              isActive === "Incomplete" && isVisible
+              isActive === 'Incomplete' && isVisible
                 ? classes.button
                 : undefined
             }
@@ -70,7 +73,7 @@ function Header({ onCategory, isVisible, onBuzz, reportData }) {
           <Button
             onClick={handleCategory}
             className={
-              isActive === "Passes" && isVisible ? classes.button : undefined
+              isActive === 'Passes' && isVisible ? classes.button : undefined
             }
           >
             Passes
@@ -85,7 +88,7 @@ function Header({ onCategory, isVisible, onBuzz, reportData }) {
           <Button
             onClick={handleCategory}
             className={
-              isActive === "Violations" && isVisible
+              isActive === 'Violations' && isVisible
                 ? classes.button
                 : undefined
             }
@@ -102,7 +105,7 @@ function Header({ onCategory, isVisible, onBuzz, reportData }) {
           <Button
             onClick={handleCategory}
             className={
-              isActive === "Inapplicable" && isVisible
+              isActive === 'Inapplicable' && isVisible
                 ? classes.button
                 : undefined
             }
