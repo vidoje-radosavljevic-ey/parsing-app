@@ -1,0 +1,29 @@
+.button {
+  margin: 3rem auto 0;
+}
+
+.buzzing {
+  background-color: #0e838a;
+  margin: 3rem auto 0;
+  transition: background-color 0.3s;
+  animation-duration: 300ms;
+  animation-name: buzz;
+}
+
+@keyframes buzz {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

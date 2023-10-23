@@ -1,0 +1,232 @@
+@import '../assets/fonts/ttnorms-pro.scss';
+body {
+  position: relative;
+  min-height: 100vh;
+  font-family: 'TTNormsPro', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #011831;
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+h1,
+.h1 {
+  font-size: 32px;
+}
+
+h2,
+.h2 {
+  font-size: 26px;
+}
+
+h3,
+.h3 {
+  font-size: 25px;
+}
+
+h4,
+.h4 {
+  font-size: 18px;
+}
+
+h5,
+.h5 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+}
+
+@media (min-width: 992px) {
+  h4,
+  .h4,
+  h3,
+  .h3 {
+    font-size: 26px;
+  }
+
+  h2,
+  .h2 {
+    font-size: 34px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  h1,
+  .h1 {
+    font-size: 42px;
+    margin-bottom: 30px;
+  }
+}
+
+.button {
+  display: block;
+  font-family: 'TTNormsPro', sans-serif;
+  background-color: blue;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.buzzing {
+  display: block;
+  background-color: blue;
+  margin: 0 auto;
+  margin-top: 3rem;
+  transition: background-color 0.3s;
+  animation-duration: 300ms;
+  animation-name: buzz;
+}
+
+@keyframes buzz {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 4rem;
+  background-color: #c4c4c4;
+}
+.header .header-list > li {
+  display: inline-block;
+  list-style: none;
+}
+.header li {
+  margin-right: 4rem;
+}
+.header .button {
+  background-color: blue;
+}
+
+.report-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+.report-list .headline {
+  display: block;
+  background-color: #2e2e38;
+  color: #fff;
+  padding: 2rem;
+}
+
+.btn {
+  background-color: #2e2e38;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.report {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 90%;
+}
+.report p {
+  margin-top: 0.2rem;
+}
+.report .help {
+  display: flex;
+  align-items: center;
+  background-color: #c4c4c4;
+  height: 3rem;
+  padding-left: 1rem;
+  margin-bottom: 0;
+}
+.report .description ol {
+  background-color: #ececec;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.report .description .node p {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  margin-left: 1.5rem;
+}
+.report .description .message {
+  background-color: #ececec;
+}
+.report .description .message h4 {
+  margin-top: 0;
+  padding-top: 1rem;
+}
+.report .description .target p {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.report .description .target a {
+  display: block;
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.report .inapplicable p {
+  margin-left: 1.5rem;
+}
+.report .inapplicable ol {
+  background-color: #ececec;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.report .inapplicable .node p {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  margin-left: 1.5rem;
+}
+.report .inapplicable .message {
+  background-color: #ececec;
+}
+.report .inapplicable .message h4 {
+  margin-top: 0;
+  padding-top: 1rem;
+}
+.report .inapplicable .target p {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.report .inapplicable .target a {
+  display: block;
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+}

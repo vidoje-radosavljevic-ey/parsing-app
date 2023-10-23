@@ -1,0 +1,211 @@
+.report {
+  .h4Title {
+    margin: 0;
+  }
+  margin: 0 auto;
+  margin-top: 2rem;
+  color: #011831;
+  p {
+    margin-top: 0.2rem;
+  }
+  .help {
+    color: #ffffff;
+  }
+  .description {
+    counter-reset: my-counter;
+    .ol {
+      background-color: #ececec;
+      margin: 1.5rem 0;
+      padding: 20px 20px 20px 40px;
+      border-radius: 6px;
+      list-style-type: none;
+      &:last-child {
+        margin: 1.5rem 0 3.5rem;
+      }
+    }
+
+    .li {
+      position: relative;
+    }
+
+    .node {
+      p {
+        margin: 0;
+        margin-bottom: 0.5rem;
+        margin-left: 1.5rem;
+      }
+    }
+
+    .message {
+      h4 {
+        margin-top: 0;
+        padding-top: 1rem;
+      }
+      background-color: #ececec;
+    }
+    .target {
+      p {
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      .wrapper {
+        width: max-content;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+      }
+      .wrapper:focus-visible {
+        outline: none;
+      }
+
+      .a {
+        color: #011831;
+        font-weight: 500;
+        text-decoration: none;
+        margin: 0 0 7px 0;
+        padding: 2px 3px;
+        border-bottom: 2px solid #0084ff;
+        background-size: 204% 150%;
+        background-image: linear-gradient(
+          to left,
+          #0069cc 50%,
+          rgba(255, 255, 255, 0) 50%
+        );
+        transition: background-position 0.5s cubic-bezier(1, 0, 0, 1),
+          color ease 0.5s, border ease 0.5s;
+      }
+      .wrapper:first-child {
+        margin-right: 5px;
+      }
+      .wrapper:last-child {
+        margin-left: 1.5rem;
+      }
+
+      .wrapper:hover > &,
+      .a:hover {
+        text-decoration: none;
+        background-position: -97% 0;
+        color: #011831;
+        cursor: pointer;
+        border-color: #0069cc;
+      }
+      .wrapper:active > &,
+      .a:active {
+        background-image: linear-gradient(
+          to left,
+          #e6eef8 50%,
+          rgba(255, 255, 255, 0) 50%
+        );
+        border-bottom: 2px solid #e6eef8;
+      }
+      .wrapper:focus > &,
+      .a:focus {
+        outline: none;
+        background-color: #e6eef8;
+        border-bottom: 2px solid transparent;
+      }
+    }
+  }
+
+  .inapplicable {
+    p {
+      margin-left: 1.5rem;
+    }
+    .ol {
+      background-color: #ffffff;
+      margin: 1.5rem 0;
+      padding: 20px;
+      border-radius: 6px;
+      list-style: none;
+      counter-reset: new-counter;
+      &:last-child {
+        margin: 1.5rem 0 3.5rem;
+      }
+    }
+
+    li {
+      counter-increment: new-counter;
+    }
+
+    li::before {
+      content: counter(new-counter);
+    }
+
+    .node {
+      p {
+        margin: 0;
+        margin-bottom: 0.5rem;
+        margin-left: 1.5rem;
+      }
+    }
+
+    .message {
+      h4 {
+        margin-top: 0;
+        padding-top: 1rem;
+      }
+      background-color: #ececec;
+    }
+    .target {
+      p {
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .wrapper {
+        width: max-content;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+      }
+      .wrapper:focus-visible {
+        outline: none;
+      }
+
+      .a {
+        color: #011831;
+        font-weight: 500;
+        text-decoration: none;
+        margin: 0 0 7px 0;
+        padding: 2px 3px;
+        border-bottom: 2px solid #0084ff;
+        background-size: 204% 150%;
+        background-image: linear-gradient(
+          to left,
+          #0069cc 50%,
+          rgba(255, 255, 255, 0) 50%
+        );
+        transition: background-position 0.5s cubic-bezier(1, 0, 0, 1),
+          color ease 0.5s, border ease 0.5s;
+      }
+      .wrapper:first-child {
+        margin-right: 5px;
+      }
+      .wrapper:last-child {
+        margin-left: 1.5rem;
+      }
+
+      .wrapper:hover > &,
+      .a:hover {
+        text-decoration: none;
+        background-position: -97% 0;
+        color: #011831;
+        cursor: pointer;
+        border-color: #0069cc;
+      }
+      .wrapper:active > &,
+      .a:active {
+        background-image: linear-gradient(
+          to left,
+          #e6eef8 50%,
+          rgba(255, 255, 255, 0) 50%
+        );
+        border-bottom: 2px solid #e6eef8;
+      }
+      .wrapper:focus > &,
+      .a:focus {
+        outline: none;
+        background-color: #e6eef8;
+        border-bottom: 2px solid transparent;
+      }
+    }
+  }
+}

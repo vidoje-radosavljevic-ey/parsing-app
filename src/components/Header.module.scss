@@ -1,0 +1,92 @@
+.logo {
+  padding: 12px 0 13px 26px;
+}
+
+.header {
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  background-color: #011831;
+  z-index: 1000;
+
+  .nav {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .buttonWrapp {
+    position: relative;
+  }
+
+  .itemNoWrapp {
+    background-color: #0085ff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -16px;
+    right: -16px;
+  }
+
+  .itemsNo {
+    font-size: 13px;
+  }
+
+  .button {
+    font-family: 'TTNormsPro', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    box-shadow: none;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.35;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      padding: 15px 19px;
+    }
+    &:active {
+      padding: 15px 18px;
+    }
+
+    &:not(:disabled):active:focus,
+    &:not(:disabled):focus-visible {
+      box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+      outline-width: 0;
+    }
+
+    /* PRIMARY */
+
+    color: #fff;
+    background-color: #0e838a;
+    border: 1px solid #0e838a;
+
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+      background-color: transparent;
+      border: 2px solid #0e838a;
+    }
+    &:active {
+      cursor: pointer;
+      color: #fff;
+      background-color: rgba(2, 87, 187, 0.1);
+      border: 3px solid #0e838a;
+    }
+  }
+}
