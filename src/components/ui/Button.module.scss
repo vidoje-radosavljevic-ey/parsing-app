@@ -18,8 +18,7 @@
   &:hover {
     padding: 15px 19px;
   }
-  &:active,
-  &:focus {
+  &:active {
     padding: 15px 18px;
   }
 
@@ -41,8 +40,7 @@
     background-color: transparent;
     border: 2px solid #60759e;
   }
-  &:active,
-  &:focus {
+  &:active {
     cursor: pointer;
     color: #fff;
     background-color: #01355a;
