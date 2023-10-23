@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import classes from './Header.module.scss';
 import Button from './ui/Button';
 import CountContext from '../store/count-context';
-import logo from '../assets/logo/hd-logo-white.svg';
 
 function Header({ onCategory, isVisible, onBuzz, reportData }) {
   const [isActive, setIsActive] = useState('');
@@ -44,13 +43,6 @@ function Header({ onCategory, isVisible, onBuzz, reportData }) {
 
   return (
     <div className={classes.header}>
-      <div>
-        <img
-          className={classes.logo}
-          src={logo}
-          alt="logo"
-        />
-      </div>
       <div className={classes.nav}>
         <div className={classes.buttonWrapp}>
           <Button
