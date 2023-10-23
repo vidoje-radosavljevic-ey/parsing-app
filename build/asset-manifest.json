@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.0e5e13ad.css",
-    "main.js": "/static/js/main.692718d7.js",
-    "static/media/TTNormsPro-Bold.svg": "/static/media/TTNormsPro-Bold.3d988f3db1168e63218a.svg",
-    "static/media/TTNormsPro-Regular.svg": "/static/media/TTNormsPro-Regular.8b76fc3912407644f1f9.svg",
-    "static/media/TTNormsPro-Bold.eot": "/static/media/TTNormsPro-Bold.600244509fc9f4fb118a.eot",
-    "static/media/TTNormsPro-Bold.ttf": "/static/media/TTNormsPro-Bold.1d9596e2c9805b950a29.ttf",
-    "static/media/TTNormsPro-Regular.eot": "/static/media/TTNormsPro-Regular.15760222dcbc4d3c4b3e.eot",
-    "static/media/TTNormsPro-Regular.ttf": "/static/media/TTNormsPro-Regular.53ff01dd462528aec9f6.ttf",
-    "static/media/TTNormsPro-Bold.woff": "/static/media/TTNormsPro-Bold.e13963dacf4862c9fc0b.woff",
-    "static/media/TTNormsPro-Regular.woff": "/static/media/TTNormsPro-Regular.fae79bcfeaa619933616.woff",
-    "static/media/TTNormsPro-Bold.woff2": "/static/media/TTNormsPro-Bold.50c810238cd2bf47bbfd.woff2",
-    "static/media/TTNormsPro-Regular.woff2": "/static/media/TTNormsPro-Regular.1e93a7406d9b7340bc74.woff2",
-    "index.html": "/index.html",
-    "main.0e5e13ad.css.map": "/static/css/main.0e5e13ad.css.map",
-    "main.692718d7.js.map": "/static/js/main.692718d7.js.map"
+    "main.css": "/parsing-app/static/css/main.eb728af9.css",
+    "main.js": "/parsing-app/static/js/main.692718d7.js",
+    "static/media/TTNormsPro-Bold.svg": "/parsing-app/static/media/TTNormsPro-Bold.3d988f3db1168e63218a.svg",
+    "static/media/TTNormsPro-Regular.svg": "/parsing-app/static/media/TTNormsPro-Regular.8b76fc3912407644f1f9.svg",
+    "static/media/TTNormsPro-Bold.eot": "/parsing-app/static/media/TTNormsPro-Bold.600244509fc9f4fb118a.eot",
+    "static/media/TTNormsPro-Bold.ttf": "/parsing-app/static/media/TTNormsPro-Bold.1d9596e2c9805b950a29.ttf",
+    "static/media/TTNormsPro-Regular.eot": "/parsing-app/static/media/TTNormsPro-Regular.15760222dcbc4d3c4b3e.eot",
+    "static/media/TTNormsPro-Regular.ttf": "/parsing-app/static/media/TTNormsPro-Regular.53ff01dd462528aec9f6.ttf",
+    "static/media/TTNormsPro-Bold.woff": "/parsing-app/static/media/TTNormsPro-Bold.e13963dacf4862c9fc0b.woff",
+    "static/media/TTNormsPro-Regular.woff": "/parsing-app/static/media/TTNormsPro-Regular.fae79bcfeaa619933616.woff",
+    "static/media/TTNormsPro-Bold.woff2": "/parsing-app/static/media/TTNormsPro-Bold.50c810238cd2bf47bbfd.woff2",
+    "static/media/TTNormsPro-Regular.woff2": "/parsing-app/static/media/TTNormsPro-Regular.1e93a7406d9b7340bc74.woff2",
+    "index.html": "/parsing-app/index.html",
+    "main.eb728af9.css.map": "/parsing-app/static/css/main.eb728af9.css.map",
+    "main.692718d7.js.map": "/parsing-app/static/js/main.692718d7.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e5e13ad.css",
+    "static/css/main.eb728af9.css",
     "static/js/main.692718d7.js"
   ]
 }
