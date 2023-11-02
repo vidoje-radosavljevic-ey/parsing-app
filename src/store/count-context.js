@@ -5,6 +5,7 @@ const CountContext = React.createContext({
   passes: '',
   violations: '',
   inapplicable: '',
+  bestPractice: '',
 });
 
 export default CountContext;
