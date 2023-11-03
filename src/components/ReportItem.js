@@ -18,8 +18,6 @@ function ReportItem({
     );
   }
 
-  console.log(bestPracticeElements);
-
   return (
     <div className={classes.report}>
       {reportData &&

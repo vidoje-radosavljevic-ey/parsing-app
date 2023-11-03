@@ -15,8 +15,6 @@ function Header({
   const [isActive, setIsActive] = useState('');
   const countCtx = useContext(CountContext);
 
-  console.log(countCtx.bestPractice);
-  console.log(reportData.inapplicable);
   if (isVisible) {
     const keys = Object.keys(reportData);
     for (const key of keys) {
@@ -204,7 +202,7 @@ function Header({
           >
             Best Practice Included
           </Button>
-          {reportData && (
+          {reportData && category !== '' && (
             <div className={classes.itemNoWrapp}>
               <p className={classes.itemsNo}>{countCtx.bestPractice}</p>
             </div>
