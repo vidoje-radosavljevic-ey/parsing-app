@@ -7,13 +7,13 @@ function ReportItem({
   allIssuesAndBestPractice,
   isActiveBestPractice,
 }) {
-  let bestPracticeElements = [];
+  let withoutBestPractice = [];
   if (allIssuesAndBestPractice) {
-    bestPracticeElements = allIssuesAndBestPractice.filter(
+    withoutBestPractice = allIssuesAndBestPractice.filter(
       (item) => !item.tags.includes('best-practice')
     );
   } else if (reportData) {
-    bestPracticeElements = reportData.filter(
+    withoutBestPractice = reportData.filter(
       (item) => !item.tags.includes('best-practice')
     );
   }
@@ -23,7 +23,7 @@ function ReportItem({
       {reportData &&
         !allIssuesAndBestPractice &&
         !isActiveBestPractice &&
-        reportData.map((item, index) => (
+        withoutBestPractice.map((item, index) => (
           <div key={Math.random()}>
             <div className={classes.help}>
               <h4 className={classes.h4Title}>
@@ -401,11 +401,11 @@ function ReportItem({
             )}
           </div>
         ))}
-      {/* without best practice */}
+      {/* with best practice */}
       {reportData &&
         !allIssuesAndBestPractice &&
         isActiveBestPractice &&
-        bestPracticeElements.map((item, index) => (
+        reportData.map((item, index) => (
           <div key={Math.random()}>
             <div className={classes.help}>
               <h4 className={classes.h4Title}>
@@ -788,7 +788,7 @@ function ReportItem({
           category === 'best practice included') && (
           <div className={classes.description}>
             {!isActiveBestPractice
-              ? allIssuesAndBestPractice.map((node, nodeIndex) => (
+              ? withoutBestPractice.map((node, nodeIndex) => (
                   <ol
                     className={classes.ol}
                     start={nodeIndex + 1}
@@ -893,7 +893,7 @@ function ReportItem({
                     </li>
                   </ol>
                 ))
-              : bestPracticeElements.map((node, nodeIndex) => (
+              : allIssuesAndBestPractice.map((node, nodeIndex) => (
                   <ol
                     className={classes.ol}
                     start={nodeIndex + 1}

@@ -6,7 +6,7 @@ import FileInput from '../src/components/FileInput';
 
 function App() {
   const [reportData, setReportData] = useState([]);
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState('violations');
   const [notice, setNotice] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [buzz, setBuzz] = useState(false);

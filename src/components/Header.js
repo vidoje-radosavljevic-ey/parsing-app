@@ -12,7 +12,7 @@ function Header({
   onBestPractice,
   isActiveBestPractice,
 }) {
-  const [isActive, setIsActive] = useState('');
+  const [isActive, setIsActive] = useState('Violations');
   const countCtx = useContext(CountContext);
 
   if (isVisible) {
@@ -23,13 +23,13 @@ function Header({
         if (key === 'incomplete') {
           const nodeCount = value.map((item) => item.nodes.length);
           const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
-          countCtx.incomplete = totalCount;
+          countCtx.incomplete =
+            totalCount -
+            reportData.incomplete.filter((item) =>
+              item.tags.includes('best-practice')
+            ).length;
           if (isActiveBestPractice && category === 'incomplete') {
-            countCtx.incomplete =
-              countCtx.incomplete -
-              reportData.incomplete.filter((item) =>
-                item.tags.includes('best-practice')
-              ).length;
+            countCtx.incomplete = totalCount;
             countCtx.bestPractice = reportData.incomplete.filter((item) =>
               item.tags.includes('best-practice')
             ).length;
@@ -39,13 +39,13 @@ function Header({
         } else if (key === 'passes') {
           const nodeCount = value.map((item) => item.nodes.length);
           const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
-          countCtx.passes = totalCount;
+          countCtx.passes =
+            totalCount -
+            reportData.passes.filter((item) =>
+              item.tags.includes('best-practice')
+            ).length;
           if (isActiveBestPractice && category === 'passes') {
-            countCtx.passes =
-              countCtx.passes -
-              reportData.passes.filter((item) =>
-                item.tags.includes('best-practice')
-              ).length;
+            countCtx.passes = totalCount;
             countCtx.bestPractice = reportData.passes.filter((item) =>
               item.tags.includes('best-practice')
             ).length;
@@ -55,13 +55,13 @@ function Header({
         } else if (key === 'violations') {
           const nodeCount = value.map((item) => item.nodes.length);
           const totalCount = nodeCount.reduce((acc, curr) => acc + curr, 0);
-          countCtx.violations = totalCount;
+          countCtx.violations =
+            totalCount -
+            reportData.violations.filter((item) =>
+              item.tags.includes('best-practice')
+            ).length;
           if (isActiveBestPractice && category === 'violations') {
-            countCtx.violations =
-              countCtx.violations -
-              reportData.violations.filter((item) =>
-                item.tags.includes('best-practice')
-              ).length;
+            countCtx.violations = totalCount;
             countCtx.bestPractice = reportData.violations.filter((item) =>
               item.tags.includes('best-practice')
             ).length;
@@ -70,15 +70,13 @@ function Header({
           }
         } else if (key === 'inapplicable') {
           const nodeCount = value.length;
-          countCtx.inapplicable = nodeCount;
+          countCtx.inapplicable = reportData.inapplicable.filter(
+            (item) => !item.tags.includes('best-practice')
+          ).length;
           if (isActiveBestPractice && category === 'inapplicable') {
-            countCtx.inapplicable =
-              countCtx.inapplicable -
-              reportData.inapplicable.filter(
-                (item) => !item.tags.includes('best-practice')
-              ).length;
-            countCtx.bestPractice = reportData.inapplicable.filter(
-              (item) => !item.tags.includes('best-practice')
+            countCtx.inapplicable = nodeCount;
+            countCtx.bestPractice = reportData.inapplicable.filter((item) =>
+              item.tags.includes('best-practice')
             ).length;
           } else if (category === 'inapplicable') {
             countCtx.bestPractice = 0;
@@ -87,11 +85,11 @@ function Header({
           const nodeCount = value.length;
           countCtx.incomplete = 0;
           countCtx.passes = 0;
-          countCtx.violations = nodeCount;
           countCtx.inapplicable = 0;
+          countCtx.violations =
+            nodeCount - reportData.issueSummary.bestPractices;
           if (isActiveBestPractice) {
-            countCtx.violations =
-              nodeCount - reportData.issueSummary.bestPractices;
+            countCtx.violations = nodeCount;
             countCtx.bestPractice = reportData.issueSummary.bestPractices;
           } else {
             countCtx.bestPractice = 0;
@@ -202,7 +200,7 @@ function Header({
           >
             Best Practice Included
           </Button>
-          {reportData && category !== '' && (
+          {(reportData.incomplete || reportData.allIssues) && (
             <div className={classes.itemNoWrapp}>
               <p className={classes.itemsNo}>{countCtx.bestPractice}</p>
             </div>
