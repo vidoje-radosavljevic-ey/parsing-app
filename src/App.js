@@ -10,10 +10,16 @@ function App() {
   const [notice, setNotice] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [buzz, setBuzz] = useState(false);
+  const [myAccountLogin, setMyAccountLogin] = useState(false);
+  const [isActiveBestPractice, setIsActiveBestPractice] = useState(true);
 
   useEffect(() => {
-    if (reportData.passes) {
+    if (reportData.passes || reportData.allIssues) {
       setIsVisible(true);
+    }
+
+    if (reportData.allIssues) {
+      setMyAccountLogin(true);
     }
   }, [reportData]);
 
@@ -46,6 +52,9 @@ function App() {
         isVisible={isVisible}
         onBuzz={handleBuzz}
         category={category}
+        myAccountLogin={myAccountLogin}
+        onBestPractice={setIsActiveBestPractice}
+        isActiveBestPractice={isActiveBestPractice}
       />
       <FileInput
         onFileRead={handleFileRead}
@@ -60,8 +69,10 @@ function App() {
       )}
       <ReportList
         reportData={reportData}
+        allIssuesAndBestPractice={reportData.allIssues}
         category={category}
         isVisible={isVisible}
+        isActiveBestPractice={isActiveBestPractice}
       />
     </Fragment>
   );
